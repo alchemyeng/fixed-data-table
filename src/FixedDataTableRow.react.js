@@ -69,6 +69,11 @@ var FixedDataTableRowImpl = React.createClass({
     onClick: PropTypes.func,
 
     /**
+     * Fire when a row is touch tapped.
+     */
+    onTouchTap: PropTypes.func,
+
+    /**
      * Fire when a row is double clicked.
      */
     onDoubleClick: PropTypes.func,
@@ -134,6 +139,7 @@ var FixedDataTableRowImpl = React.createClass({
       <div
         className={joinClasses(className, this.props.className)}
         onClick={this.props.onClick ? this._onClick : null}
+        onTouchTap={this.props.onTouchTap ? this._onTouchTap : null}
         onDoubleClick={this.props.onDoubleClick ? this._onDoubleClick : null}
         onMouseDown={this.props.onMouseDown ? this._onMouseDown : null}
         onMouseEnter={this.props.onMouseEnter ? this._onMouseEnter : null}
@@ -174,6 +180,10 @@ var FixedDataTableRowImpl = React.createClass({
 
   _onClick(/*object*/ event) {
     this.props.onClick(event, this.props.index);
+  },
+
+  _onTouchTap(/*object*/ event) {
+    this.props.onTouchTap(event, this.props.index);
   },
 
   _onDoubleClick(/*object*/ event) {
