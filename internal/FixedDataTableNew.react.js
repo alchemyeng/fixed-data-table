@@ -219,6 +219,11 @@ var FixedDataTable = React.createClass({
     onRowClick: PropTypes.func,
 
     /**
+     * Callback that is called when a row is touch tapped.
+     */
+    onRowTouchTap: PropTypes.func,
+
+    /**
      * Callback that is called when a row is double clicked.
      */
     onRowDoubleClick: PropTypes.func,
@@ -538,6 +543,7 @@ var FixedDataTable = React.createClass({
       height: state.bodyHeight,
       offsetTop: offsetTop,
       onRowClick: state.onRowClick,
+      onRowTouchTap: state.onRowTouchTap,
       onRowDoubleClick: state.onRowDoubleClick,
       onRowMouseDown: state.onRowMouseDown,
       onRowMouseEnter: state.onRowMouseEnter,
